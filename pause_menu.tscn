@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bwfhvo3gtf7e5"]
+
+[ext_resource type="Script" uid="uid://8dpxsabxcy5v" path="res://pause_menu.gd" id="1_05uyy"]
+[ext_resource type="FontFile" uid="uid://dwy0mevuebcha" path="res://dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf" id="1_hdmo1"]
+[ext_resource type="Shader" uid="uid://tj7fietmpdld" path="res://pause_menu.gdshader" id="2_p81d2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akie1"]
+shader = ExtResource("2_p81d2")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_2nc7s"]
+resource_name = "Blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundColor:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.050000004, -0.13333334, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PausePanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d3xb4"]
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundColor:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.050000004, -0.13333334, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PausePanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxa3g"]
+_data = {
+&"Blur": SubResource("Animation_2nc7s"),
+&"RESET": SubResource("Animation_d3xb4")
+}
+
+[node name="PauseMenu" type="Control" unique_id=1271812202]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05uyy")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=170100801]
+material = SubResource("ShaderMaterial_akie1")
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 720.0
+
+[node name="PausePanel" type="Panel" parent="." unique_id=783244959]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 416.0
+offset_bottom = 600.0
+metadata/_edit_group_ = true
+
+[node name="PanelBox" type="VBoxContainer" parent="PausePanel" unique_id=1616153831]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PausePanel/PanelBox" unique_id=358629502]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PausePanel/PanelBox" unique_id=940534166]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="PausePanel/PanelBox" unique_id=2079456149]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="Blur" type="AnimationPlayer" parent="." unique_id=36050881]
+libraries/ = SubResource("AnimationLibrary_mxa3g")
+
+[connection signal="pressed" from="PausePanel/PanelBox/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PausePanel/PanelBox/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PausePanel/PanelBox/QuitButton" to="." method="_on_quit_button_pressed"]
