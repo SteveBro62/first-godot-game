@@ -27,7 +27,7 @@ func _on_mob_timer_timeout() -> void:
 	mob.position = mob_spawn_location.position
 	direction += randf_range(-PI/4, PI/4)
 	mob.rotation = direction
-	var velocity = Vector2(randf_range(30.0, 40.0), 0.0)
+	var velocity = Vector2(randf_range(200.0, 300.0), 0.0)
 	mob.linear_velocity = velocity.rotated(direction)
 	add_child(mob)
 func game_over() -> void:
