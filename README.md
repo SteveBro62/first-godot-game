@@ -1,6 +1,7 @@
-In order to play the game, download both the "first game.exe" and the "first game.pck" files and run the .exe one.
-This is an implementation of the game from the godot docs tutorial, I also added a pause menu (opened by pressing Esc).
-The game is only for Windows.
+<img width="476" height="718" alt="Gameplay_Demo_2D" src="https://github.com/user-attachments/assets/47e4372d-c0f7-49ff-ab3d-b50171fb1b37" />
+<br>
+Built a simple 2D game following the Godot tutorial page. This project served as my introduction to game design and development. I learned basic object-orientated programming concepts and event handling. Added a custom HUD and pause menu (accessed by pressing escape). Only playable on PC.
+
 Assets used:
 Sprites:
   "Abstract Platformer" by Kenney
