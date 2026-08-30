@@ -1,3 +1,4 @@
+# About the game
 <img width="476" height="718" alt="Gameplay_Demo_2D" src="https://github.com/user-attachments/assets/47e4372d-c0f7-49ff-ab3d-b50171fb1b37" /></img>
 <br> <br>
 Built a simple 2D game following the Godot tutorial page.<br> </br>
