@@ -6,10 +6,7 @@ This project served as my introduction to game design and development. I learned
 Added a custom HUD and pause menu (accessed by pressing escape). <br> Only playable on PC.<br>
 
 ### Credits:<br>
-Sprites:<br>
-  "Abstract Platformer" by Kenney<br>
-Music:<br>
-  "House in a Forest Loop" by HorrorPen<br>
-Font:<br>
-  Xolonium by Severin Meyer<br>
+Sprites: "Abstract Platformer" by Kenney<br>
+Music: "House in a Forest Loop" by HorrorPen<br>
+Font: Xolonium by Severin Meyer<br>
 Licenses: CC0 1.0; SIL Open Font License 1.1; CC BY 3.0<br>
