@@ -5,6 +5,7 @@ Built a simple 2D game following the Godot tutorial page.<br> </br>
 **Objective**: dodge the incoming mobs.<br>
 This project served as my introduction to game design and development. I learned basic object-orientated programming concepts and event handling.<br>
 Added a custom HUD and pause menu (accessed by pressing escape). <br> Only playable on PC.<br>
+Game can be downloaded from the "releases" section.<br>
 
 ### Credits:<br>
 Sprites: "Abstract Platformer" by Kenney<br>
